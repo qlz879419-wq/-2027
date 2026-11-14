@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fukuoka Family Trip 2027</title>
+<style>
+:root{--bg:#eef4fb;--card:#fff;--ink:#16324f;--sub:#5b7088;--main:#1f78c8;--main2:#0e9aa7;--warn:#fff6dc;--warnb:#f0d58a;--ok:#e6f7ef;--line:#dbe6f2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:env(safe-area-inset-bottom)}
+.hero{position:relative;padding:calc(env(safe-area-inset-top) + 56px) 20px 28px;color:#fff;background:linear-gradient(160deg,#1b5fa8 0%,#1f9fc0 55%,#7fd3d0 100%);overflow:hidden}
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:34px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero h1{font-size:30px;font-weight:800;letter-spacing:.5px}
+.hero .date{opacity:.9;margin-top:4px}
+.count{margin:18px 0 14px;background:rgba(255,255,255,.95);color:var(--ink);border-radius:18px;padding:14px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.count small{color:var(--sub);display:block}
+.count b{font-size:22px;color:var(--main);font-variant-numeric:tabular-nums}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.pills span{background:rgba(255,255,255,.22);padding:6px 12px;border-radius:99px;font-size:13px;backdrop-filter:blur(4px)}
+nav{position:sticky;top:0;z-index:10;background:rgba(238,244,251,.95);backdrop-filter:blur(8px);display:flex;gap:8px;overflow-x:auto;padding:10px 14px;padding-top:calc(env(safe-area-inset-top) + 10px);scrollbar-width:none;border-bottom:1px solid var(--line)}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;border:0;background:#fff;color:var(--ink);padding:8px 14px;border-radius:99px;font-size:14px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08);cursor:pointer}
+nav button.on{background:var(--main);color:#fff}
+main{padding:6px 16px 60px;max-width:640px;margin:0 auto}
+section{padding-top:26px;scroll-margin-top:64px}
+h2{font-size:22px;margin-bottom:14px}
+.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,80,130,.08)}
+.card.flight{border-left:5px solid var(--main)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;background:#e3f0fc;color:var(--main);margin-right:6px}
+.tag.g{background:var(--ok);color:#16774a}.tag.y{background:var(--warn);color:#8a6200}
+.big{font-size:26px;font-weight:800;color:var(--main);margin:6px 0}
+.note{background:var(--ok);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:10px}
+.warn{background:var(--warn);border:1px dashed var(--warnb);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:10px}
+.muted{color:var(--sub);font-size:14px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
+.row:last-child{border:0}
+.wx{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.wx div{background:#f4f9ff;border-radius:12px;text-align:center;padding:8px 4px;font-size:13px}
+.wx div b{display:block;font-size:12px;color:var(--sub)}
+.wx div i{font-style:normal;font-size:24px;display:block}
+.scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+.scroll .spot{flex:none;width:230px;scroll-snap-align:start;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(31,80,130,.08)}
+.spot .pic{height:96px;display:flex;align-items:center;justify-content:center;font-size:44px}
+.spot .bd{padding:12px}
+.spot h3{font-size:16px}
+.spot p{font-size:13px;color:var(--sub);margin:6px 0 10px}
+.map{display:inline-block;background:#e3f0fc;color:var(--main);text-decoration:none;font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px}
+details.day{background:#fff;border-radius:18px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,80,130,.08);overflow:hidden}
+details.day>summary{list-style:none;cursor:pointer;padding:15px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:8px}
+details.day>summary::-webkit-details-marker{display:none}
+details.day>summary:after{content:"▸";color:var(--main);transition:.2s}
+details.day[open]>summary:after{transform:rotate(90deg)}
+.day .in{padding:0 16px 16px}
+.tl{position:relative;margin:4px 0 0 6px;padding-left:18px;border-left:3px solid #bcd8f3}
+.tl li{list-style:none;position:relative;padding:0 0 12px;font-size:15px}
+.tl li:before{content:"";position:absolute;left:-26px;top:5px;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid var(--main)}
+.tl li.alt:before{border-color:#f0a63a}
+.tl li small{display:block;color:var(--sub);font-size:13px}
+.tip summary{font-weight:700;cursor:pointer}
+.tip ul{margin:10px 0 0 18px;font-size:14px}
+.tip li{margin-bottom:5px}
+.seg{display:flex;gap:8px;margin-bottom:12px}
+.seg button{flex:1;border:2px solid transparent;background:#fff;border-radius:14px;padding:10px 6px;font-size:15px;font-weight:700;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08);cursor:pointer}
+.seg button small{display:block;font-weight:500;color:var(--sub);font-size:12px}
+.seg button.on{border-color:var(--main);background:#e9f3fd;color:var(--main)}
+.nav{display:inline-block;background:var(--main);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 16px;border-radius:99px;margin-right:8px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;cursor:pointer}
+.chk:last-child{border:0}
+.chk input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--main)}
+.chk input:checked+span{text-decoration:line-through;color:var(--sub)}
+.chk small{display:block;color:var(--sub);font-size:12px}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:10px 20px 30px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>Fukuoka Family Trip</h1>
+  <div class="date">2027.03.05 – 03.13・9 天 8 夜</div>
+  <div class="count"><small>福岡出發倒數（3/5 08:00 起飛）</small><b id="cd">--</b></div>
+  <div class="pills"><span>👨‍👩‍👦 2 大 1 小</span><span>🗓 9 天 8 夜</span><span>🚗 自駕</span></div>
+</header>
+<nav id="nav">
+  <button data-t="flight" class="on">✈️ 航班</button>
+  <button data-t="weather">☀️ 天氣</button>
+  <button data-t="spots">📍 景點</button>
+  <button data-t="parks">🌳 公園</button>
+  <button data-t="stay">🏠 住宿</button>
+  <button data-t="days">📅 行程</button>
+  <button data-t="pack">🎒 攜帶</button>
+  <button data-t="tips">🧳 提醒</button>
+</nav>
+<main>
+
+<section id="flight">
+  <h2>✈️ 航班與接送</h2>
+  <div class="card flight">
+    <span class="tag">去程</span><b>長榮 BR106</b>
+    <div class="muted">桃園 → 福岡・3/5（五）</div>
+    <div class="big">08:00 → 11:15</div>
+    <div class="muted">座位 63H／63J／63K</div>
+    <div class="note">🚐 阿黃機場接送：嘉義大林 03:00 上車 → 桃園第二航廈（NT$5,550，現金付司機）</div>
+  </div>
+  <div class="card flight">
+    <span class="tag">回程</span><b>長榮 BR105</b>
+    <div class="muted">福岡 → 桃園・3/13（六）</div>
+    <div class="big">12:15 → 13:50</div>
+    <div class="muted">座位 55A／55B／55C</div>
+    <div class="note">🚐 桃園第二航廈 → 嘉義大林（NT$5,600，依實際落地免費等候 90 分鐘）</div>
+    <div class="warn">⏰ 從糸島出發（房源標示開車約 45 分）；加油、還車手續須在這之前完成，出發時間出發前再重抓。</div>
+  </div>
+</section>
+
+<section id="weather">
+  <h2>☀️ 福岡天氣</h2>
+  <div class="card">
+    <div id="wx" class="muted">預報約在出發前 16 天內才有資料，開啟網頁時會自動抓取（Open-Meteo）。目前還太早，或此頁面環境無法連線時，會顯示這段文字。<br><a class="map" style="margin-top:10px" target="_blank" rel="noopener" href="https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1+%E5%A4%A9%E6%B0%A3">改看 Google 福岡天氣</a></div>
+  </div>
+  <div class="warn">3 月海邊風大，山區（大分方向）可能有結冰風險；3/7 起每天晚上看一次預報再決定隔天行程。</div>
+</section>
+
+<section id="spots">
+  <h2>📍 必訪景點</h2>
+  <div class="scroll" id="spotList"></div>
+</section>
+
+<section id="parks">
+  <h2>🌳 放電公園（依住宿分類）</h2>
+  <div class="seg" id="seg">
+    <button data-s="aki">🏡 住秋月<small>3/5–3/9</small></button>
+    <button data-s="ito">🏡 住糸島<small>3/9–3/13</small></button>
+  </div>
+  <div id="parkList"></div>
+  <p class="muted">按「導航」會用手機目前位置為起點開啟 Google Maps。車程我沒查到，請以導航為準；營業時間以官網為準。</p>
+</section>
+
+<section id="stay">
+  <h2>🏠 住宿</h2>
+  <div class="card">
+    <span class="tag">前 4 晚</span><b>秋月 庭ハウス（一軒家貸切・2LDK）</b>
+    <div class="row"><span>入住</span><b>3/5（五）15:00</b></div>
+    <div class="row"><span>退房</span><b>3/9（二）11:00</b></div>
+    <div class="muted">294-2 Akizuki, Asakura-shi, Fukuoka-ken 838-0001</div>
+    <div class="muted">房東：Kerry</div>
+    <a class="map" style="margin-top:10px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=294-2+Akizuki+Asakura-shi+Fukuoka+838-0001">📍 地圖</a>
+  </div>
+  <div class="card">
+    <span class="tag">後 4 晚</span><b>糸島 MITOKO HOUSE（平屋一戶建・2LDK）</b>
+    <div class="row"><span>入住</span><b>3/9（二）15:00</b></div>
+    <div class="row"><span>退房</span><b>3/13（六）12:00</b></div>
+    <div class="muted">2165-118 Shimamitoko, Itoshima, Fukuoka 819-1322</div>
+    <div class="muted">房東：Risa・房源標示免費停車、開車到福岡空港約 45 分</div>
+    <a class="map" style="margin-top:10px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=2165-118+Shimamitoko+Itoshima+Fukuoka+819-1322">📍 地圖</a>
+    <div class="note">3/9 秋月 11:00 退房後到 15:00 入住之間，剛好排麵包超人博物館。</div>
+  </div>
+  <div class="card">
+    <b>🚗 租車：Noah（ViaTravel）已確定</b>
+    <div class="row"><span>兒童安全座椅</span><b>✅ 已含</b></div>
+    <div class="row"><span>ETC</span><b>✅ 已含（還車時結算費用）</b></div>
+    <div class="row"><span>雪胎</span><b>看當時狀況，不用就不收費</b></div>
+  </div>
+</section>
+
+<section id="days">
+  <h2>📅 每日行程</h2>
+  <div id="dayList"></div>
+</section>
+
+<section id="pack">
+  <h2>🎒 攜帶清單</h2>
+  <div class="card">
+    <b>⏳ 出發前要做的事</b>
+    <div class="row"><span>📶 買 eSIM（蝦皮 Nippon SIM for Japan）</span><b>2/20 前</b></div>
+    <div class="row"><span>💴 國泰外幣 ATM 領日幣現金</span><b>出發前</b></div>
+    <div class="muted" style="margin-top:8px">領現金建議留一週緩衝，並先確認單日提領額度與 ATM 位置。</div>
+  </div>
+  <div class="card" style="background:#f4f9ff">
+    <b>🌡 3 月福岡穿搭怎麼抓</b>
+    <div class="muted" style="margin-top:6px">福岡 3 月平年值：最高約 15°C、最低約 7°C，降水量約 100 mm 上下（氣象廳 1991–2020 平年值）。早晚冷、白天偏涼，要用洋蔥式穿法。秋月與大分方向屬山區，我推估會再冷幾度，3/8 Safari 日要多備保暖。</div>
+  </div>
+  <div id="packList"></div>
+  <p class="muted">勾選狀態只存在這支手機的瀏覽器，換裝置不會同步。</p>
+</section>
+
+<section id="tips">
+  <h2>🧳 旅遊小提醒</h2>
+  <details class="card tip" open>
+    <summary>🌧 雨天備案</summary>
+    <ul>
+      <li>3/8：前一晚看天氣。晴且不冷才去 African Safari；下雨、低溫或山區結冰就走自然史博物館＋OUTLETS。</li>
+      <li>3/10 糸島、3/12 福津以戶外為主；下雨就把 3/10 與 3/11 對調（Marine World 在室內）。</li>
+      <li>3/12 下雨縮短成神社＋就近用餐。</li>
+    </ul>
+  </details>
+  <details class="card tip">
+    <summary>✅ 出發前待確認</summary>
+    <ul>
+      <li>3/7 九州鐵道紀念館：2027 年維護休館日是否落在 3/7</li>
+      <li>3/8 Safari 與自然史博物館：最新營業時間、3 歲與 4 歲票價界線</li>
+      <li>3/9 麵包超人博物館休館日；博多停車場高度限制（Noah 車高）</li>
+      <li>3/10 糸島、3/12 宮地嶽神社：停車與營業資料尚未查到</li>
+      <li>3/11 Marine World 官網的幼兒票價</li>
+      <li>3/4 白天向阿黃確認司機資料（訂單要求行程前 24 小時提供）</li>
+    </ul>
+  </details>
+  <details class="card tip">
+    <summary>🧸 帶孩子的注意事項</summary>
+    <ul>
+      <li>3/5 前一晚約 02:00 起床，爸爸開車前要有休息。落地後只留一站採買，其餘到秋月再補。</li>
+      <li>每天 1–2 個主要景點，孩子累了就直接回住宿。</li>
+      <li>接送已登記：兒童座椅 1、嬰兒推車 1、行李 16–22 吋 3 件、22–29 吋 2 件。</li>
+    </ul>
+  </details>
+  <p class="muted" style="margin-top:8px">票價與營業時間來自搜尋摘要，車程為推估，出發前請以官網與 Google Maps 為準。</p>
+</section>
+</main>
+<footer>Made with Claude・資訊截至 2026/11/12</footer>
+
+<script>
+var SPOTS=[
+ ["🏛","九州國立博物館","3/6","常設展 ¥700；1 樓有免費親子體驗室，週一休館。","九州国立博物館"],
+ ["⛩","太宰府天満宮參道","3/6","門前町散步，從博物館可走手自動步道過去。","太宰府天満宮"],
+ ["🚂","九州鐵道紀念館","3/7","大人 ¥500、中學生以下 ¥250，迷你火車 ¥300。","九州鉄道記念館"],
+ ["🏘","門司港懷舊區","3/7","順路逛海邊老街與用餐。","門司港レトロ"],
+ ["🦁","African Safari","3/8","可自駕進場，大人 ¥2,600、4 歲～中學生 ¥1,500。","九州自然動物公園 アフリカンサファリ"],
+ ["🦖","自然史・歷史博物館","3/8","雨天方案，全室內。","北九州市立自然史・歴史博物館"],
+ ["🍞","福岡麵包超人博物館","3/9","不用預約，三人約 ¥6,000–6,600。","福岡アンパンマンこどもミュージアム"],
+ ["🌊","櫻井二見浦","3/10","糸島海岸，風大要帶防風外套。","桜井二見ヶ浦"],
+ ["🐠","Marine World 海之中道","3/11","室內為主，停車一日 ¥600，有接乳室與推車出租。","マリンワールド海の中道"],
+ ["⛩","宮地嶽神社","3/12","福津周邊，停車與活動待查證。","宮地嶽神社"]
+];
+var COL=["#cfe8fb","#d6f1e6","#fde4cf","#e7dcf8","#fbe0e6"];
+document.getElementById("spotList").innerHTML=SPOTS.map(function(s,i){
+ return '<div class="spot"><div class="pic" style="background:'+COL[i%5]+'">'+s[0]+'</div><div class="bd"><span class="tag">'+s[2]+'</span><h3>'+s[1]+'</h3><p>'+s[3]+'</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(s[4])+'">📍 地圖</a></div></div>';
+}).join("");
+
+var DAYS=[
+ {t:"Day 1｜3/5（五）抵達福岡・入住秋月",items:[["11:15","抵達福岡機場","入境、行李、租車手續，推估 13:30–14:00 才出機場"],["下午","採買（只留一站）","西松屋或超市擇一，其餘在秋月補"],["傍晚","入住秋月","先跟房東確認入住時間"]],warn:"前一晚約 02:00 起床，落地後開 Noah，今天不排景點。"},
+ {t:"Day 2｜3/6（六）太宰府文化之旅",items:[["09:30","九州國立博物館","開館前後到，停車 ¥500/次，約 313 格"],["","親子體驗室「あじっぱ」","1 樓免費；現場有 8 台推車可借"],["午後","太宰府天満宮參道","走手自動步道過去，門前町用餐"]],warn:"週六人多，博物館停車場滿了就沒位，建議早到。"},
+ {t:"Day 3｜3/7（日）鐵道與門司港",items:[["09:00","九州鐵道紀念館","開館 09:00–17:00，最後入館 16:30"],["午後","門司港懷舊區","沿海岸散步、用餐"]],warn:"沒有專用停車場，用西側市營停車場（最初 30 分鐘免費，第 1 小時 ¥200）。車程推估約 1.5 小時。"},
+ {t:"Day 4｜3/8（一）Safari 或雨天方案",items:[["晴天","African Safari","3 月約 09:30–16:30，最後入場 16:00；自駕進場車窗不能開"],["雨天","自然史・歷史博物館＋THE OUTLETS","09:00–17:00，全室內、順路"]],alt:true,warn:"全程最累的一天：秋月到大分宇佐來回推估 3.5–4 小時。前一晚看天氣再定，不要早上才決定。"},
+ {t:"Day 5｜3/9（二）搬家日・麵包超人",items:[["上午","秋月退房",""],["","東長寺","30 分鐘內順路停留"],["10:00–","福岡麵包超人博物館","最後入場 16:00；1 歲以上要買票"],["15:00 後","入住糸島 MITOKO HOUSE","博多到糸島的車程出發前用 Google Maps 驗證"]],warn:"只定一個主景點。博多阪急、Yodobashi 留給孩子還有體力時加碼。停車先確認高度限制。"},
+ {t:"Day 6｜3/10（三）糸島",items:[["上午","櫻井二見浦",""],["","海岸線兜風",""],["午餐","伊都菜彩或超市","營業時間與停車待查證"]],warn:"住宿就在糸島，不用長途來回；海邊風大要帶防風外套。下雨可與 3/11 對調。"},
+ {t:"Day 7｜3/11（四）Marine World",items:[["09:30","Marine World 海之中道水族館","最後入館 16:30，停車一日 ¥600"],["備選","海之中道海濱公園","加了就會超過一天體力，建議擇一"]],warn:"大人票約 ¥2,100–2,500，3 歲幼兒票價待確認。"},
+ {t:"Day 8｜3/12（五）宮地嶽神社",items:[["上午","宮地嶽神社","停車、參拜時間待查證"],["午後","福津周邊",""],["傍晚","回住宿整理行李","行李要在今晚整理完"]]},
+ {t:"Day 9｜3/13（六）回台灣",items:[["待定","從糸島出發","房源標示開車到福岡空港約 45 分；出發時間用 Google Maps 重新抓，約 2 小時前抵機場"],["","加油、還車、手續","以 ViaTravel 確認內容為準"],["12:15","BR105 起飛","13:50 抵桃園，阿黃接送回嘉義"]]}
+];
+document.getElementById("dayList").innerHTML=DAYS.map(function(d,i){
+ var li=d.items.map(function(x){return '<li class="'+(d.alt&&(x[0]==="雨天")?'alt':'')+'"><b>'+(x[0]?x[0]+'　':'')+x[1]+'</b>'+(x[2]?'<small>'+x[2]+'</small>':'')+'</li>'}).join("");
+ return '<details class="day"'+(i===0?' open':'')+'><summary>'+d.t+'</summary><div class="in"><ul class="tl">'+li+'</ul>'+(d.warn?'<div class="warn">⚠️ '+d.warn+'</div>':'')+'</div></details>';
+}).join("");
+
+var PARKS={
+ aki:[
+  ["🛝","筑前ぽぽろ 子ども広場","筑前町",["長滑梯、隧道滑梯、吊橋、網狀攀爬","有尿布台與授乳室","園區隨時可進，管理棟週一休息","適合 3/5 落地後繞去放電"],"福岡県朝倉郡筑前町下高場2717 筑前ぽぽろ"],
+  ["🎡","三連水車の里あさくら","朝倉市",["實物大水車，多目的廣場有滑梯","08:00–17:00","輕鬆，半小時順路停留即可"],"福岡県朝倉市山田2192-1 三連水車の里あさくら"]
+ ],
+ ito:[
+  ["🌿","ファームパーク伊都国","糸島市",["中央大草地，可免費借玩具","入場免費；9:00–17:00，週一休","遊具不多，主要是讓他在草地跑"],"福岡県糸島市高祖747-1 ファームパーク伊都国"],
+  ["🌳","志摩中央公園","糸島市",["糸島最大的選項，寬闊草地加木製遊具","停車場約 25 台"],"志摩中央公園 糸島市志摩初"],
+  ["⛴","芥屋の大門 遊覧船（選配）","糸島市",["3–11 月運航，2 歲以上 400 日圓","是坐船不是放電，天候不佳會停航"],"福岡県糸島市志摩芥屋667 芥屋大門観光社"],
+  ["🌧","宗像ユリックス Mu-Mo（雨天備案）","宗像市",["九州最大級全天候木製遊樂場","3–12 歲約 800 日圓起，料金依日期變動","可自帶飲食、免預約、可自由進出","3/12 福津下雨時用"],"福岡県宗像市久原400 宗像ユリックス"]
+ ]
+};
+function showParks(k){
+ document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",b.dataset.s===k)});
+ document.getElementById("parkList").innerHTML=PARKS[k].map(function(p){
+  return '<div class="card"><div style="font-size:30px">'+p[0]+'</div><b style="font-size:17px">'+p[1]+'</b> <span class="tag">'+p[2]+'</span><ul style="margin:8px 0 12px 18px;font-size:14px;color:var(--sub)">'+p[3].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><a class="nav" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&destination='+encodeURIComponent(p[4])+'">🧭 導航</a><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p[4])+'">📍 地圖</a></div>';
+ }).join("");
+}
+document.getElementById("seg").addEventListener("click",function(e){var b=e.target.closest("button");if(b)showParks(b.dataset.s)});
+showParks(Date.now()>=Date.UTC(2027,2,8,15,0,0)?"ito":"aki");
+
+var PACK=[
+ ["📄 證件與付款",[
+  ["護照（3 人，含小孩）","出發前確認效期"],
+  ["台灣駕照正本＋日文譯本","自駕必備，取車時要出示"],
+  ["信用卡（主卡＋備用卡）","租車、住宿、油費都可能刷卡；先確認海外刷卡額度"],
+  ["日幣現金與零錢","停車場、小店、神社賽錢；國泰外幣 ATM 領取"],
+  ["訂單截圖：機票、租車、兩間民宿、阿黃接送","離線也能打開；不要只靠網路"],
+  ["Visit Japan Web 入境／海關 QR","建議出發前填好，落地比較快"]
+ ]],
+ ["📶 網路與電子",[
+  ["eSIM（蝦皮 Nippon SIM for Japan）","2/20 前購買；先確認手機支援 eSIM，QR 存好"],
+  ["行動電源","放隨身行李，不能託運"],
+  ["手機車用支架與充電線","自駕導航用"],
+  ["充電器／延長線","日本插座與台灣同為兩孔，電壓 100V，吹風機等高功率電器要留意"]
+ ]],
+ ["💊 小孩藥品與健康",[
+  ["慣用藥（原包裝）","有處方藥就帶處方箋或藥袋"],
+  ["退燒、止痛、感冒、腸胃、外傷用品","種類與用量請依小兒科醫師或藥師指示"],
+  ["耳溫槍或體溫計",""],
+  ["健保卡、保險資料","旅平險與緊急聯絡方式"],
+  ["防蚊液、保濕乳液、護唇膏","3 月乾冷"]
+ ]],
+ ["👕 衣物（大人）",[
+  ["防風保暖外套（薄羽絨或防風夾克）","3 月早晚約個位數溫度"],
+  ["長袖＋薄毛衣或刷毛，洋蔥式穿法","白天約 15°C，室內會熱"],
+  ["長褲、保暖襪","秋月與大分山區偏冷"],
+  ["圍巾、毛帽","早晚、海邊風大時用"],
+  ["輕便雨衣或折傘","3 月降雨不少，雨天方案可能啟動"],
+  ["好走的鞋","神社參道與博物館走很多"]
+ ]],
+ ["🧒 衣物與用品（小孩）",[
+  ["發熱衣 3–4 件、長袖、薄毛衣",""],
+  ["防風防水外套（可拆內裡更好）","Safari、糸島海邊用"],
+  ["厚褲、襪子多帶","小孩容易弄濕"],
+  ["毛帽、薄手套","山區與海邊風大"],
+  ["備用整套衣褲放隨身包","飛機與餐廳意外用"],
+  ["零食、小玩具、繪本","車程每天都不短"],
+  ["推車（已登記）","安全座椅租車已含，不用自帶"]
+ ]],
+ ["🚗 自駕與其他",[
+  ["硬幣錢包","停車場與小店常用現金"],
+  ["塑膠袋、濕紙巾、小垃圾袋","車上用"],
+  ["洗衣用品","先確認兩間民宿有無洗衣機，再決定衣服帶幾套"]
+ ]]
+];
+var ST={};try{ST=JSON.parse(localStorage.getItem("fk27")||"{}")}catch(e){}
+document.getElementById("packList").innerHTML=PACK.map(function(g,gi){
+ return '<details class="card tip"'+(gi===0?' open':'')+'><summary>'+g[0]+'</summary><div style="margin-top:8px">'+g[1].map(function(it,ii){var id=gi+"-"+ii;
+  return '<label class="chk"><input type="checkbox" data-k="'+id+'"'+(ST[id]?' checked':'')+'><span>'+it[0]+(it[1]?'<small>'+it[1]+'</small>':'')+'</span></label>'}).join("")+'</div></details>';
+}).join("");
+document.getElementById("packList").addEventListener("change",function(e){var k=e.target.dataset.k;if(!k)return;ST[k]=e.target.checked;try{localStorage.setItem("fk27",JSON.stringify(ST))}catch(x){}});
+
+// countdown to 2027-03-05 08:00 Taiwan time (UTC+8)
+var T=Date.UTC(2027,2,5,0,0,0);
+function tick(){var s=Math.floor((T-Date.now())/1000);var el=document.getElementById("cd");
+ if(s<=0){el.textContent="出發囉！";return}
+ var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+ el.textContent=d+" 天 "+h+" 時 "+m+" 分 "+("0"+x).slice(-2)+" 秒"}
+tick();setInterval(tick,1000);
+
+// nav
+var btns=[].slice.call(document.querySelectorAll("#nav button"));
+btns.forEach(function(b){b.onclick=function(){document.getElementById(b.dataset.t).scrollIntoView({behavior:"smooth"})}});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){btns.forEach(function(b){b.classList.toggle("on",b.dataset.t===e.target.id)})}})},{rootMargin:"-30% 0px -60% 0px"});
+btns.forEach(function(b){io.observe(document.getElementById(b.dataset.t))});
+
+// live weather (works once the trip is within the 16-day forecast window)
+try{
+ fetch("https://api.open-meteo.com/v1/forecast?latitude=33.59&longitude=130.40&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&start_date=2027-03-05&end_date=2027-03-13")
+ .then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
+  var D=j.daily;if(!D||!D.time)return;
+  function ic(c){return c<=1?"☀️":c<=3?"⛅":c<=48?"☁️":c<=67?"🌧":c<=77?"🌨":c<=82?"🌦":"⛈"}
+  document.getElementById("wx").className="wx";
+  document.getElementById("wx").innerHTML=D.time.map(function(t,i){return '<div><b>'+t.slice(5).replace("-","/")+'</b><i>'+ic(D.weathercode[i])+'</i>'+Math.round(D.temperature_2m_min[i])+'°–'+Math.round(D.temperature_2m_max[i])+'°<br>💧'+D.precipitation_probability_max[i]+'%</div>'}).join("");
+ }).catch(function(){});
+}catch(e){}
+</script>
+</body>
+</html>
