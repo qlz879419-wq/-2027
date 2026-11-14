@@ -339,12 +339,14 @@ btns.forEach(function(b){io.observe(document.getElementById(b.dataset.t))});
 
 // live weather (works once the trip is within the 16-day forecast window)
 try{
- fetch("https://api.open-meteo.com/v1/forecast?latitude=33.59&longitude=130.40&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&start_date=2027-03-05&end_date=2027-03-13")
+ fetch("https://api.open-meteo.com/v1/forecast?latitude=33.59&longitude=130.40&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=16")
  .then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){
   var D=j.daily;if(!D||!D.time)return;
+  var idx=[];D.time.forEach(function(t,i){if(t>="2027-03-05"&&t<="2027-03-13")idx.push(i)});
+  if(!idx.length)return;
   function ic(c){return c<=1?"☀️":c<=3?"⛅":c<=48?"☁️":c<=67?"🌧":c<=77?"🌨":c<=82?"🌦":"⛈"}
   document.getElementById("wx").className="wx";
-  document.getElementById("wx").innerHTML=D.time.map(function(t,i){return '<div><b>'+t.slice(5).replace("-","/")+'</b><i>'+ic(D.weathercode[i])+'</i>'+Math.round(D.temperature_2m_min[i])+'°–'+Math.round(D.temperature_2m_max[i])+'°<br>💧'+D.precipitation_probability_max[i]+'%</div>'}).join("");
+  document.getElementById("wx").innerHTML=idx.map(function(i){var t=D.time[i];return '<div><b>'+t.slice(5).replace("-","/")+'</b><i>'+ic(D.weathercode[i])+'</i>'+Math.round(D.temperature_2m_min[i])+'°–'+Math.round(D.temperature_2m_max[i])+'°<br>💧'+D.precipitation_probability_max[i]+'%</div>'}).join("");
  }).catch(function(){});
 }catch(e){}
 </script>
